@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+    
+    // Literal Syntax !
+    var person = {
+        name:'Sachin',
+        isaPlayer:true,
+        citiesPlayedIn:['Mumbai','Kolkata','Nagpur'],
+        address:{
+            flat:202,
+            location:'Andheri'
+        },
+        city:'Mumbai',
+        getDetails:function(){
+            console.log(this.name + " lives in " + this.city)
+        }
+    };
+
+    var jsonData = JSON.stringify(person);
+
+    var jsObject = JSON.parse(jsonData);
+// Constructor ! (ES5)
+    // function Car(){
+    //     this.name = "i20";
+    //     this.speed = 200;
+    //     this.accelerate = function(){
+    //        // console.log(this.name + " is running at " + this.speed + " kmph !")
+    //        console.log(`${this.name} is running at ${this.speed} kmph !`)
+
+    //     }
+    // }
+
+    // var carObj = new Car();
+    // carObj.accelerate();
+
+    // ES 6
+    if(true){
+        let x = 200; // block scoped !
+        console.log(x);
+        if(true){
+            let x = 20000;
+            console.log(x);
+        }
+    }
+
+    var str = `ksdjfhdgffh
+    lsdjlfhjdhf
+    sdjfjdbf
+    dkfjdfnl`;
+
+
+   const PI = 3.14;
+
+ //  PI = 3.14567; // Error
+ // classes
+    
+    class Car{
+            constructor(theName="i20",theSpeed =200){
+                this.name= theName ;
+                this.speed = theSpeed;
+            }
+            accelerate(){
+                return (`${this.name} is running at ${this.speed} kmph !`)
+            }
+    }
+     var carObj = new Car();
+    // carObj.accelerate();
+    
+    class JamesBondCar extends Car{
+            constructor(theName,theSpeed,submerge,nitro){
+                super(theName,theSpeed);
+                this.canSubmerge = submerge;
+                this.nitroPower = nitro;
+            }
+
+            accelerate(){
+                   return super.accelerate() + " Use Nitro Power ? " + this.nitroPower;
+            }
+    }
+
+    var jbc = new JamesBondCar("Aston Martin",400,true,true);
+    console.log(jbc.accelerate());
+
+    var name="CAPITA",address="Bengaluru";
+    var company = { name:name,address:address };
+    var cmp = {name,address};// Enhanced Object Literal syntax !
+
+    // Arrow Functions
+    var cars = ['BMW',"AUDI","FERRARI"];
+
+    // for(let c of cars){
+
+    // }
+
+    cars.forEach(function(car,theIndex){
+            console.log(car);
+    })
+    
+
+   var Square = function (x){
+        return x * x;
+    }
+
+    var Square = x => x * x;
+
+    cars.forEach(
+        (car,theIndex)=>console.log(car)
+    )
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
